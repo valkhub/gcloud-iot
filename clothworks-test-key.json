@@ -1,0 +1,12 @@
+{
+  "type": "service_account",
+  "project_id": "clothworks-test",
+  "private_key_id": "6803b08bc6a0e168c86d2517574cc49b5b1dab0f",
+  "private_key": "-----BEGIN PRIVATE KEY-----\nMIIEvAIBADANBgkqhkiG9w0BAQEFAASCBKYwggSiAgEAAoIBAQCkbN1jeALCEynR\nLkBxvG4GWlmOtO36x+WUsJmyNmi35cwxPbEPWKStCQrezGMe+AwD4vW1jN6bJfUf\nanTpGq3OXNWf2uIVErjq/dmShUSxmvBaPQ7jKfptKGFiX40F334PAH1NQFuUM/Nu\nF+f5IJZCpP7gmuY2QhWTWiDBHYpeRy8LxsbdhV+eGC/IqVmjsSgKslKQmq9wg6VY\nD56nC/CKyyPwnUsXwcWlSBBltjzYwFi0BRCyvBvmeCzSyiRSxDhKC2yevLXTEc/R\nOLu1bOBpZQkr6eC1QJURT1Dra8FyMiENmvHPY9yCp5AEFbzPvBRqGzaE6z7ytGD5\nqn9nQnztAgMBAAECgf8TjcJUg7hCBujyMFUH3ERV0mjUHgWEeAhjpmP2IvQYP+Z6\nZmn9aTfzXAN9JiajiDFz0xgQDVtPUPtj3X4JyOmNL0Q4aSSysjH2MgE8FitqgeYT\nf9oMfyplXxKng9HsNjYc5/H+zBpQ2vk0kE3pi4TE2fbK+BKhfawvoPoLUpR3TEDT\nzCVimF2R++LWtrMBO9743HSvuZdvgy8lC9DrqHLQKSKEuCmPwjm0hNbQrOoBXVf3\nZVYhR68tKuZVfyql7KrdsdbMCOiE9v1HdQR7KZxRsmQUfFry9g8ehZt2gQuZYYrF\nhv6ZfuD1KZdMMxX4OWOJzDS/Wf9vYUIAvWoGoTkCgYEA0B47zcCz2er0yd3fFHA2\n/sTgVMVKM5CONalXUjdvn0Z3/dodFAUDo/2+CR6+4DCGErYMzQqpbRwDYcqTTnqY\n4wCYq1pOuYa79R0Vq7aZoBxTSbQrtZ6c1YRmCYeBY8SrmtIAPR1Ei/rDVvaClF0F\nsbtHnYEYjBT0AahQlNaw388CgYEAykE0TnfA7tHVwCritdEAz7dBUBSJ8S6AG6zI\ngufjBkxIX+kC5jqlwyBYmuRGQIJhYgpwHKpdHs6BO5peieGuSQi9LT/icvdyRuaS\njbZNzu/bMXX6CnfzGJFef5OQIuH/uyOpwLV5qEgDHORbnL+FlyIL7/4zNKkOoiv/\nhNN4KoMCgYBxReNa62V4WE9/h8khQKpOJC3NNcxbIHSmdFLYpt+UGzC38/0bplcC\n7Np/8EIHl6GBkaCKASGSB0s38KAYeNW5x9tQeEic5d5rXLcszKf04zXZybx4j6ng\n9LzsttoPyT11eJM0sDdc0NF9BZKw2ah9wecKrPcFV2ovdMLXH7sJNQKBgQCKX0PO\n72VCvrKzj2OdqokYkzKO/A5HwF2LEZH45XbPpz7Yx0zhgHxJ3AZiqgxaNBk1/xgm\ntHOTEQsfYQSO5qTbeKwcmhluOFappTPc2j2vdzAKTcGsidX6F/KD68vv4ZiZStPn\ncQDznZjrmlwHCIz4EiYConIb9BF76AgfsqICywKBgQCZkM7l4YiMrTsAvQvvM4nv\nsuKjVCVlC08Gp/MtwVRihoIgFmRf6t9S+AYt21D5SHWsMCcGzXODgZJkYcj/hdn9\nJQ54js6BM26tM7FGnV8iEsuetd5onEY6bm6x7U+7dHnCK88YKKCrxPw6JDt2Kazw\nUlkNRnXy/Whp9BIKaJ6wUg==\n-----END PRIVATE KEY-----\n",
+  "client_email": "gcloud-iot@clothworks-test.iam.gserviceaccount.com",
+  "client_id": "112099951643591709358",
+  "auth_uri": "https://accounts.google.com/o/oauth2/auth",
+  "token_uri": "https://oauth2.googleapis.com/token",
+  "auth_provider_x509_cert_url": "https://www.googleapis.com/oauth2/v1/certs",
+  "client_x509_cert_url": "https://www.googleapis.com/robot/v1/metadata/x509/gcloud-iot%40clothworks-test.iam.gserviceaccount.com"
+}

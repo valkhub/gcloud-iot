@@ -1,0 +1,19 @@
+# On Google Cloud Shell
+gcloud pubsub topics create washing-topic
+gcloud pubsub subscriptions create projects/$project_id/subscriptions/washing-subscription --topic=washing-topic
+virtualenv env
+source env/bin/activate
+pip install -r requirements.txt
+chmod 755 generate_keys.sh
+./generate_keys.sh
+wget https://pki.goog/roots.pem
+gcloud iot registries create washing-registry --project=$project_id --region=europe-west1 --event-notification-config=topic=projects/$project_id/topics/washing-topic
+gcloud iot devices create washing-sensor-device --project=$project_id --region=europe-west1 --registry=washing-registry --public-key path=rsa_cert.pem,type=rs256
+gcloud iot devices create washing-actuator-device --project=$project_id --region=europe-west1 --registry=washing-registry --public-key path=rsa_cert.pem,type=rs256
+gcloud functions deploy subscribe --trigger-topic washing-topic --runtime=python37
+python mqtt_producer_demo.py --project_id=$project_id --cloud_region=europe-west1 --registry_id=washing-registry --device_id=washing-sensor-device --washing=80
+
+# On local machine
+virtualenv env
+source env/bin/activate
+python mqtt_consumer_demo.py --project_id=$project_id --cloud_region=europe-west1 --registry_id=washing-registry --device_id=washing-actuator-device
