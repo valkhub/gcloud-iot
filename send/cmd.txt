@@ -1,0 +1,28 @@
+# Run on local machine
+
+# Terminal 1 - Consumer (washing-actuator-device)
+virtualenv env
+source env/bin/activate
+pip install -r requirements.txt
+chmod 755 generate_keys.sh
+./generate_keys.sh
+wget https://pki.goog/roots.pem
+python mqtt_consumer_demo.py --project_id=clothworks-test --cloud_region=europe-west1 --registry_id=washing-registry --device_id=washing-actuator-device
+
+# Terminal 2 - Producer (washing-sensor-device)
+virtualenv env
+source env/bin/activate
+pip install -r requirements.txt
+chmod 755 generate_keys.sh
+./generate_keys.sh
+wget https://pki.goog/roots.pem
+python mqtt_producer_demo.py --project_id=clothworks-test --cloud_region=europe-west1 --registry_id=washing-registry --device_id=washing-sensor-device --temperature=80
+
+# Creation Commands
+gcloud init
+gcloud pubsub topics create washing-topic
+gcloud pubsub subscriptions create projects/clothworks-test/subscriptions/washing-subscription --topic=washing-topic
+gcloud iot registries create washing-registry --project=clothworks-test --region=europe-west1 --event-notification-config=topic=projects/clothworks-test/topics/washing-topic
+gcloud iot devices create washing-sensor-device --project=clothworks-test --region=europe-west1 --registry=washing-registry --public-key path=rsa_cert.pem,type=rs256
+gcloud iot devices create washing-actuator-device --project=clothworks-test --region=europe-west1 --registry=washing-registry --public-key path=rsa_cert.pem,type=rs256
+gcloud functions deploy subscribe --trigger-topic washing-topic --runtime=python37
