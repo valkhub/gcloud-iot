@@ -1,0 +1,36 @@
+version: "3.9"
+services:
+%{ for k, v in sensors }
+  sensor-${k}:
+    build: firmware/sensor
+    image: iot-firmware-sensor:latest
+    environment:
+      IOT_PROJECT_ID: ${project_id}
+      IOT_DEVICE_ID: sensor-${k}
+      IOT_DEVICE_PATH: ${v.device.id}
+      IOT_DEVICE_BROKER: ${broker}
+      IOT_DEVICE_CA: /auth/ca.pem
+      IOT_DEVICE_CERT: /auth/cert.pem
+      IOT_DEVICE_KEY: /auth/key.pem
+    volumes:
+      - ./auth/ca.pem:/auth/ca.pem:ro
+      - ./auth/sensors/${k}/cert.pem:/auth/cert.pem:ro
+      - ./auth/sensors/${k}/key.pem:/auth/key.pem:ro
+%{ endfor ~}
+%{ for k, v in actuators }
+  actuator-${k}:
+    build: firmware/actuator
+    image: iot-firmware-actuator:latest
+    environment:
+      IOT_PROJECT_ID: ${project_id}
+      IOT_DEVICE_ID: actuator-${k}
+      IOT_DEVICE_PATH: ${v.device.id}
+      IOT_DEVICE_BROKER: ${broker}
+      IOT_DEVICE_CA: /auth/ca.pem
+      IOT_DEVICE_CERT: /auth/cert.pem
+      IOT_DEVICE_KEY: /auth/key.pem
+    volumes:
+      - ./auth/ca.pem:/auth/ca.pem:ro
+      - ./auth/actuators/${k}/cert.pem:/auth/cert.pem:ro
+      - ./auth/actuators/${k}/key.pem:/auth/key.pem:ro
+%{ endfor ~}
